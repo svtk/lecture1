@@ -14,6 +14,11 @@ fun whileLoop() {
 
 
 fun forLoop() {
+    val list = listOf(1, 2, 3)
+    for (element in list) {
+        print(element)
+    }
+
     for (i in 1..9) { // including
         print(i)
     }

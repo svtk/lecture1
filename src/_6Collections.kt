@@ -5,11 +5,11 @@ fun main(args: Array<String>) {
     for (i in list) {
         println(i)
     }
-    println(list.javaClass)
+    println(list)
 
     val mutableList = mutableListOf(1, 2, 3)
     mutableList.add(4)
-    println(mutableList.javaClass)
+    println(mutableList)
 
     //read-only vs mutable
 }

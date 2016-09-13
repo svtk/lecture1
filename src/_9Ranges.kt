@@ -1,11 +1,15 @@
 package controlStructuresAndCollections
 
 fun isLetter(c: Char) = c in 'a'..'z' || c in 'A'..'Z'
+// c in 'a'..'z'
+// is compiled to:
+// 'a' <= c && c <= 'z'
+
 fun isNotDigit(c: Char) = c !in '0'..'9'
 
 fun main(args: Array<String>) {
-    println(isLetter('q'))
-    println(isNotDigit('x'))
+    println(isLetter('q'))     // true
+    println(isNotDigit('x'))   // true
 }
 
 fun recognize(c: Char) = when (c) {
@@ -17,4 +21,15 @@ fun recognize(c: Char) = when (c) {
 fun whatWillBePrinted() {
     println("Kotlin" in "Java".."Scala")
     println("Kotlin" in setOf("Java", "Scala"))
+}
+
+fun ranges() {
+    val intRange = 1..10
+    for (i in intRange) { /*...*/ }
+    for (i in 1..10) { /*...*/ }
+
+    val list = listOf(1, 2)
+    if (3 in list) { /*...*/ }
+    // is compiled to:
+    // list.contains(3)
 }
